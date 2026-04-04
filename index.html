@@ -1,215 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aditya Gupta</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aditya Gupta | System Administrator</title>
+
+<!-- FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- ICONS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <style>
-:root {
-    --primary: #2563eb;
-    --text: #111;
-    --light: #555;
-    --border: #e5e7eb;
+:root{
+  --bg1:#020617;
+  --bg2:#0f172a;
+  --accent:#38bdf8;
+  --card:rgba(255,255,255,0.08);
+  --border:rgba(255,255,255,0.15);
 }
 
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    color: var(--text);
-    background: #ffffff;
-    line-height: 1.6;
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  color:#e5e7eb;
+  background: linear-gradient(135deg,var(--bg1),var(--bg2));
+  scroll-behavior:smooth;
 }
 
-/* NAVBAR */
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 10%;
-    border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
-    background: white;
+/* NAV */
+nav{
+  position:sticky; top:0; z-index:10;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:14px 8%;
+  backdrop-filter: blur(12px);
+  background: rgba(2,6,23,0.6);
+  border-bottom:1px solid var(--border);
 }
-
-nav a {
-    text-decoration: none;
-    margin-left: 20px;
-    color: var(--text);
-    font-weight: 500;
-}
+nav .logo{font-weight:600; letter-spacing:.5px}
+nav a{color:var(--accent); text-decoration:none; margin-left:14px; font-size:14px}
 
 /* HERO */
-header {
-    padding: 100px 10%;
-    max-width: 900px;
+header{
+  text-align:center;
+  padding:70px 20px 40px;
 }
+.profile{
+  width:130px;height:130px;border-radius:50%;
+  border:3px solid var(--accent); object-fit:cover;
+  box-shadow:0 0 25px rgba(56,189,248,.35);
+}
+h1{margin:12px 0 6px}
+.subtitle{opacity:.85; max-width:700px; margin:0 auto}
 
-h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
+.btn{
+  display:inline-block; margin:10px 6px; padding:10px 18px;
+  border-radius:8px; text-decoration:none; font-size:14px;
+  border:1px solid var(--border);
+  backdrop-filter: blur(10px);
+  background: var(--card);
+  color:#fff;
+  transition:.25s;
 }
-
-.subtitle {
-    font-size: 18px;
-    color: var(--light);
-}
-
-.buttons {
-    margin-top: 25px;
-}
-
-.btn {
-    padding: 10px 18px;
-    border-radius: 6px;
-    text-decoration: none;
-    margin-right: 10px;
-    border: 1px solid var(--border);
-    color: var(--text);
-    transition: 0.2s;
-}
-
-.btn.primary {
-    background: var(--primary);
-    color: white;
-    border: none;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-}
+.btn.primary{background:var(--accent); color:#000; border:none}
+.btn:hover{transform:translateY(-2px); box-shadow:0 10px 20px rgba(0,0,0,.25)}
 
 /* SECTION */
-section {
-    padding: 60px 10%;
-    max-width: 900px;
-}
+section{padding:60px 8%}
+h2{margin-bottom:20px}
 
-h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
+/* GLASS CARD */
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:16px;
+  margin:14px 0;
+  backdrop-filter: blur(12px);
+  transition:.25s;
 }
+.card:hover{transform: translateY(-4px) scale(1.01)}
 
-/* PROJECTS */
-.project {
-    margin-bottom: 20px;
+.grid{
+  display:grid; grid-template-columns:1fr 1fr; gap:16px;
 }
-
-.project h3 {
-    margin: 0;
-}
-
-.project p {
-    color: var(--light);
+@media(max-width:768px){
+  .grid{grid-template-columns:1fr}
 }
 
 /* SKILLS */
-.skills span {
-    display: inline-block;
-    padding: 8px 12px;
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    margin: 5px;
-    font-size: 14px;
+.skills span{
+  display:inline-block; margin:6px; padding:8px 12px;
+  border-radius:20px;
+  background:#111827; border:1px solid var(--border);
 }
 
-/* CERT */
-.cert a {
-    display: inline-block;
-    margin-top: 10px;
-    color: var(--primary);
-    text-decoration: none;
+/* PROJECT IMG */
+.card img{
+  width:100%; border-radius:10px; margin-top:10px;
 }
+
+/* CERT LIST */
+.cert a{color:var(--accent)}
 
 /* FOOTER */
-footer {
-    text-align: center;
-    padding: 40px;
-    border-top: 1px solid var(--border);
-    color: var(--light);
+footer{
+  padding:30px; text-align:center;
+  background:#020617; border-top:1px solid var(--border);
 }
-</style>
 
+/* WHATSAPP */
+.whatsapp{
+  position:fixed; right:18px; bottom:18px;
+  background:#25D366; color:#fff;
+  border-radius:50%; padding:14px;
+  font-size:20px; text-decoration:none;
+  box-shadow:0 8px 18px rgba(0,0,0,.4);
+}
+
+/* ANIMATION */
+.reveal{opacity:0; transform:translateY(30px); transition:.8s}
+.reveal.active{opacity:1; transform:translateY(0)}
+</style>
 </head>
 
 <body>
 
 <nav>
-    <div><b>Aditya</b></div>
-    <div>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#cert">Certificates</a>
-        <a href="#contact">Contact</a>
-    </div>
+  <div class="logo"><i class="fa-solid fa-user"></i> Aditya</div>
+  <div>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#cert">Certificates</a>
+    <a href="#contact">Contact</a>
+  </div>
 </nav>
 
-<header>
-    <h1>Aditya Gupta</h1>
-    <p class="subtitle">
-        Aspiring System Administrator & IT Support Engineer with hands-on experience in cloud, networking, and infrastructure.
-    </p>
+<header class="reveal">
+  <img src="profile.jpg" class="profile" alt="profile">
+  <h1>Aditya Gupta</h1>
+  <p class="subtitle">
+    System Administrator & IT Support Engineer focused on Cloud, Networking, and Infrastructure.
+    Hands-on experience with Windows Server, Active Directory, and AWS environments.
+  </p>
 
-    <div class="buttons">
-        <a href="resume.pdf" class="btn primary">Download Resume</a>
-        <a href="#" class="btn">GitHub</a>
-        <a href="#" class="btn">LinkedIn</a>
-    </div>
+  <a href="resume.pdf" class="btn primary"><i class="fa-solid fa-download"></i> Resume</a>
+  <a href="https://github.com/YOUR_USERNAME" class="btn"><i class="fa-brands fa-github"></i> GitHub</a>
+  <a href="https://linkedin.com/in/YOUR_PROFILE" class="btn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
 </header>
 
-<section id="projects">
-    <h2>Projects</h2>
+<section id="projects" class="reveal">
+<h2><i class="fa-solid fa-diagram-project"></i> Projects</h2>
 
-    <div class="project">
-        <h3>Network Lab Setup</h3>
-        <p>Configured IP addressing, subnetting, and network troubleshooting using Cisco Packet Tracer.</p>
-    </div>
+<div class="grid">
 
-    <div class="project">
-        <h3>Active Directory Lab</h3>
-        <p>Implemented user management, group policies, and domain configuration using Windows Server.</p>
-    </div>
+<div class="card">
+<h3>Network Lab Setup</h3>
+<p>Configured IP addressing, subnetting, VLANs, DNS, DHCP and troubleshooting using Cisco Packet Tracer.</p>
+<img src="project1.jpg">
+</div>
 
-    <div class="project">
-        <h3>AWS Infrastructure</h3>
-        <p>Deployed EC2 instances and managed storage using AWS services.</p>
-    </div>
+<div class="card">
+<h3>Active Directory Lab</h3>
+<p>Created users, groups and GPO policies using Windows Server. Managed centralized authentication.</p>
+<img src="project2.jpg">
+</div>
+
+<div class="card">
+<h3>AWS Infrastructure</h3>
+<p>Deployed EC2 instances, configured S3 storage and VPC networking in AWS environment.</p>
+<img src="project3.jpg">
+</div>
+
+<div class="card">
+<h3>Virtual Machine Setup</h3>
+<p>Configured multiple OS environments using VMware/VirtualBox and tested networking between VMs.</p>
+<img src="project4.jpg">
+</div>
+
+<div class="card">
+<h3>Server Administration</h3>
+<p>Managed users, disk, and services ensuring system performance and stability.</p>
+<img src="project5.jpg">
+</div>
+
+<div class="card">
+<h3>Network Troubleshooting</h3>
+<p>Resolved real-world issues like IP conflicts, routing errors, and connectivity failures.</p>
+<img src="project6.jpg">
+</div>
+
+</div>
 </section>
 
-<section id="skills">
-    <h2>Skills</h2>
-    <div class="skills">
-        <span>Networking</span>
-        <span>TCP/IP</span>
-        <span>DNS</span>
-        <span>DHCP</span>
-        <span>Windows Server</span>
-        <span>Active Directory</span>
-        <span>AWS</span>
-        <span>Troubleshooting</span>
-    </div>
+<section id="skills" class="reveal">
+<h2><i class="fa-solid fa-code"></i> Skills</h2>
+<div class="skills">
+<span>Networking</span><span>TCP/IP</span><span>DNS</span><span>DHCP</span>
+<span>Windows Server</span><span>Active Directory</span><span>AWS</span><span>Troubleshooting</span>
+</div>
 </section>
 
-<section id="cert">
-    <h2>Certificates</h2>
-    <div class="cert">
-        <p>Cloud Computing Diploma - Jetking</p>
-        <a href="certificate1.pdf">View Certificate</a>
-    </div>
+<section id="cert" class="reveal">
+<h2><i class="fa-solid fa-certificate"></i> Certificates</h2>
+
+<div class="card cert">Certificate 1 - <a href="cert1.pdf">View</a></div>
+<div class="card cert">Certificate 2 - <a href="cert2.pdf">View</a></div>
+<div class="card cert">Certificate 3 - <a href="cert3.pdf">View</a></div>
+<div class="card cert">Certificate 4 - <a href="cert4.pdf">View</a></div>
+<div class="card cert">Certificate 5 - <a href="cert5.pdf">View</a></div>
+<div class="card cert">Certificate 6 - <a href="cert6.pdf">View</a></div>
+<div class="card cert">Certificate 7 - <a href="cert7.pdf">View</a></div>
+<div class="card cert">Certificate 8 - <a href="cert8.pdf">View</a></div>
+
 </section>
 
-<section id="contact">
-    <h2>Contact</h2>
-    <p>Email: your-email@gmail.com</p>
-    <p>
-        <a href="#">LinkedIn</a> |
-        <a href="#">GitHub</a>
-    </p>
+<section id="contact" class="reveal">
+<h2><i class="fa-solid fa-phone"></i> Contact</h2>
+<p>Email: your-email@gmail.com</p>
+<p>Phone: 1234567890</p>
+<p>Address: Jammu, India</p>
 </section>
 
 <footer>
-    © 2026 Aditya Gupta
+<p>Aditya Gupta | System Administrator</p>
 </footer>
+
+<a href="https://wa.me/91XXXXXXXXXX" class="whatsapp">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+window.addEventListener('scroll', ()=>{
+  reveals.forEach(r=>{
+    const top = r.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      r.classList.add('active');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
